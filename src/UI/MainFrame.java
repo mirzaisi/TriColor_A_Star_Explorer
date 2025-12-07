@@ -92,6 +92,13 @@ public class MainFrame extends JFrame {
 
             if (result.isSolved()) {
                 treeDialog.appendSolutionPath(result.getPath());
+            } else {
+                JOptionPane.showMessageDialog(
+                        this,
+                        result.getMessage(),
+                        "No Solution Within Limit",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
             }
         } finally {
             controlPanel.getSolveButton().setEnabled(true);
