@@ -1,0 +1,53 @@
+package model;
+
+import java.util.Objects;
+
+/**
+ * Immutable row/column pair for a 3x3 board.
+ */
+public final class Position {
+    private final int row;
+    private final int col;
+
+    public Position(int row, int col) {
+        this.row = row;
+        this.col = col;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public Position translate(int dRow, int dCol) {
+        return new Position(row + dRow, col + dCol);
+    }
+
+    /**
+     * Check if this position is still on a 3x3 board.
+     */
+    public boolean isInsideBoard() {
+        return row >= 0 && row < 3 && col >= 0 && col < 3;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Position)) return false;
+        Position position = (Position) o;
+        return row == position.row && col == position.col;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(row, col);
+    }
+
+    @Override
+    public String toString() {
+        return "(" + row + "," + col + ")";
+    }
+}
