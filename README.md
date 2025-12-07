@@ -11,7 +11,7 @@ Java/Swing app for a 3x3 board with tiles R, G, and B. It runs A* with Hamming d
 ## How to Use
 
 1) Set the Initial and Goal boards: click a cell to cycle `empty → R → G → B → empty` (colors indicate tile).
-2) Press **Solve with A2** to run A*; a popup shows the search tree and solution summary.
+2) Press **Solve with A Star to** to run A*; a popup shows the search tree and solution summary.
 3) Press **Reset boards** to clear both boards.
 
 ## Run (Windows PowerShell)
